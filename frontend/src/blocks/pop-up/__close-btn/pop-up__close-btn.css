@@ -1,0 +1,28 @@
+.pop-up__close-btn {
+  position: absolute;
+  top: -36px;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0;
+  background: url(../../../images/icons/close-icon.svg) no-repeat center / cover;
+  border: none;
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+  .pop-up__close-btn {
+    align-self: center;
+    margin-right: 0;
+    margin-left: 262px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .pop-up__close-btn {
+    margin: 0;
+    top: -40px;
+    right: -40px;
+    width: 32px;
+    height: 32px;
+  }
+}

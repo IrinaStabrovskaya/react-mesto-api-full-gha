@@ -1,0 +1,10 @@
+.photos__delete-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 18px;
+  height: 19.3px;
+  background: url(../../../images/icons/trash.svg) no-repeat center / cover;
+  padding: 0;
+  border: 0;
+}

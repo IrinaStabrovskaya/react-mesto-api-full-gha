@@ -1,0 +1,22 @@
+.photos {
+  display: flex;
+  flex-direction: column;
+  margin: 36px auto 0;
+  width: 282px;
+  min-height: 742px;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .photos {
+    margin-top: 50px;
+    max-width: 581px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .photos {
+    max-width: 880px;
+  }
+}

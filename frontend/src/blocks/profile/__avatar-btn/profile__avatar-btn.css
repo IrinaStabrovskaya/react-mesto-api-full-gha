@@ -1,0 +1,25 @@
+.profile__avatar-btn {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 1280px) {
+  .profile__avatar-btn {
+    margin-right: 30px;
+  }
+}
+
+.profile__avatar-btn:hover::before {
+  display: block;
+  position: absolute;
+  content: '';
+  background: rgba(0, 0, 0, .8) url("../../../images/icons/pencil-icon.svg") no-repeat center / cover;
+  background-size: 26px 26px;
+  width: 120px;
+  height: 120px;
+  z-index: 1;
+}

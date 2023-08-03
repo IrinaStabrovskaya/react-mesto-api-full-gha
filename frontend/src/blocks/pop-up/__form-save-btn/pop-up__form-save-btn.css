@@ -1,0 +1,29 @@
+.pop-up__form-save-btn {
+  margin-top: 16px;
+  padding: 0;
+  min-width: 238px;
+  min-height: 46px;
+  background: #000;
+  border-radius: 2px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #fff;
+  border: none;
+}
+
+.pop-up__form-save-btn:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1280px) {
+  .pop-up__form-save-btn {
+    margin-top: 19px;
+    min-width: 358px;
+    min-height: 50px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

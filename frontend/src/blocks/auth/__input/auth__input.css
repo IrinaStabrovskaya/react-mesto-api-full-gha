@@ -1,0 +1,17 @@
+.auth__input {    
+    margin-top: 30px;
+    height: 27px;
+    box-sizing: border-box;
+    padding-bottom: 13px;
+    border: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 2px solid #ccc;
+    background-color: #000;
+    color: #ccc;
+}
+
+.auth__input:-webkit-autofill {
+    color: #000 !important;
+}
