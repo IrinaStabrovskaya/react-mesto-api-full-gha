@@ -8,7 +8,7 @@ const { CREATED } = require('../constants/errors');
 const getCards = (req, res, next) => {
   Card.find({})
     .then((cards) => {
-      res.send({ data: cards });
+      res.send(cards);
     })
     .catch((err) => next(err));
 };
@@ -24,7 +24,7 @@ const deleteCard = (req, res, next) => {
         throw new Forbidden('Вы не можете удалить чужую карточку');
       }
       Card.deleteOne(cardData)
-        .then(() => res.send({ data: cardData }))
+        .then(() => res.send(cardData))
         .catch(next);
     })
     .catch((err) => {
@@ -43,7 +43,7 @@ const createCard = (req, res, next) => {
   const id = req.user._id;
 
   Card.create({ name, link, owner: id })
-    .then((newCard) => res.status(CREATED).send({ data: newCard }))
+    .then((newCard) => res.status(CREATED).send(newCard))
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
         return next(
@@ -63,7 +63,7 @@ const likeCard = (req, res, next) => {
   )
     .orFail(() => new Error('NotValidId'))
     .then((cardData) => {
-      res.send({ data: cardData });
+      res.send(cardData);
     })
     .catch((err) => {
       if (err.message === 'NotValidId') {
@@ -87,7 +87,7 @@ const dislikeCard = (req, res, next) => {
   )
     .orFail(() => new Error('NotValidId'))
     .then((cardData) => {
-      res.send({ data: cardData });
+      res.send(cardData);
     })
     .catch((err) => {
       if (err.message === 'NotValidId') {

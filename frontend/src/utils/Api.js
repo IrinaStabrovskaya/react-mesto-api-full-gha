@@ -44,6 +44,7 @@ export class Api {
   }
   //получение начальных карточек с сервера
   getInitialsCards() {
+
     return fetch(`${this._url}/cards`, {
       method: "GET",
       headers: this._headers,
@@ -103,9 +104,10 @@ export class Api {
   }
 }
 export const api = new Api({
-  url: "https://mesto.nomoreparties.co/v1/cohort-62",
+
+  url: "my-mesto.nomoredomains.xyz",
   headers: {
-    authorization: "519bc60f-1765-4721-8a2c-733284c363a9",
+    authorization: `Bearer ${localStorage.getItem('token')}`,
     "content-type": "application/json",
   },
 });

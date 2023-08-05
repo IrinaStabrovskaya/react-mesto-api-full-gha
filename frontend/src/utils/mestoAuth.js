@@ -1,4 +1,4 @@
-export const BASE_URL = "https://auth.nomoreparties.co";
+export const BASE_URL = "api.my-mesto.nomoreparties.co";
 
 export const register = ({ email, password }) => {
   return fetch(`${BASE_URL}/signup`, {
@@ -39,12 +39,12 @@ export const authorization = ({ email, password }) => {
   });
 };
 
-export const isValidToken = (token) => {
+export const isValidToken = () => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
   }).then((res) => {
     if (res.ok) {

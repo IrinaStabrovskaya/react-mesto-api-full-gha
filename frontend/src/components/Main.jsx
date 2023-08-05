@@ -14,7 +14,7 @@ function Main(props) {
       link={card.link}
       likes={card.likes}
       cardId={card._id}
-      ownerId={card.owner._id}
+      ownerId={card.owner}
       onCardClick={props.onCardClick}
       onCardLike={props.onCardLike}
       onCardDelete={props.onCardDelete}

@@ -18,7 +18,7 @@ const Card = ({
   const currentUser = useContext(CurrentUserContext);
   const hasLikes = likes.length !== 0;
   const isOwn = ownerId === currentUser._id;
-  const isLiked = likes.some((i) => i._id === currentUser._id);
+  const isLiked = likes.some(id => id === currentUser._id);
   const cardLikeButtonClassName = `photos__heart-btn ${
     isLiked && "photos__heart-btn_active"
   }`;
@@ -33,7 +33,6 @@ const Card = ({
 
   function handleDeleteClick() {
     onCardDelete({ cardId });
-    console.log(cardId);
   }
 
   return (

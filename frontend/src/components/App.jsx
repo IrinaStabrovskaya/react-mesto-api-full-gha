@@ -65,7 +65,7 @@ const App = () => {
   };
 
   const handleCardLike = (card) => {
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some(id => id === currentUser._id);
 
     api
       .changeLikeCardStatus(card.cardId, !isLiked)
@@ -136,7 +136,7 @@ const App = () => {
         .then((data) => {
           if (data) {
             setIsLoggedIn(true);
-            setUser(data.data.email);
+            setUser(data.email);
             navigate(location.pathname);
           } else {
             setIsLoggedIn(false);

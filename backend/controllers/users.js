@@ -18,7 +18,7 @@ const JWT_SECRET = 'super-puper-secret-key';
 // запрос всех пользователей
 const getUsers = (req, res, next) => {
   User.find({})
-    .then((users) => res.send({ data: users }))
+    .then((users) => res.send(users))
     .catch((err) => {
       if (err instanceof mongoose.Error.CastError) {
         return next(new BadRequest('Переданы некорректные данные при поиске пользователей'));
@@ -30,7 +30,7 @@ const getUsers = (req, res, next) => {
 // запрос своих данных
 const getUser = (req, res, next) => {
   User.findOne({ _id: req.user._id })
-    .then((userData) => res.send({ data: userData }))
+    .then((userData) => res.send(userData))
     .catch((err) => {
       if (err instanceof mongoose.Error.CastError) {
         return next(new BadRequest('Переданы некорректные данные при поиске пользователя'));
@@ -44,7 +44,7 @@ const getUserById = (req, res, next) => {
   User.findById(req.params.userId)
     .orFail(() => new Error('NotValidId'))
     .then((userData) => {
-      res.send({ data: userData });
+      res.send(userData);
     })
     .catch((err) => {
       if (err.message === 'NotValidId') {
@@ -72,7 +72,7 @@ const createUser = (req, res, next) => {
       password: hash,
     }))
     .then((userData) => {
-      res.status(CREATED).send({ data: userData });
+      res.status(CREATED).send(userData);
     })
     .catch((err) => {
       if (err.code === 11000) {
@@ -93,7 +93,7 @@ const updateUser = (req, res, next) => {
   )
     .orFail(() => new Error('NotValidId'))
     .then((userData) => {
-      res.send({ data: userData });
+      res.send(userData);
     })
     .catch((err) => {
       if (err.message === 'NotValidId') {
@@ -116,7 +116,7 @@ const updateAvatar = (req, res, next) => {
       if (!avatar) {
         throw new BadRequest('Ссылка не передана');
       }
-      res.send({ data: userData });
+      res.send(userData);
     })
     .catch((err) => {
       if (err.message === 'NotValidId') {
