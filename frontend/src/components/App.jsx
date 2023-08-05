@@ -154,7 +154,7 @@ const App = () => {
     return mestoAuth
       .register({ email, password })
       .then((data) => {
-        setUser(data.data.email);
+        setUser(data.email);
         setIsLoggedIn(true);
         setErrorRegister(false);
         setInfoTooltipOpen(true);
