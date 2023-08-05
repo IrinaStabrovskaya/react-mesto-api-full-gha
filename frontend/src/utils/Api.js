@@ -104,7 +104,7 @@ export class Api {
   }
 }
 export const api = new Api({
-  // url: "http://localhost:3000",
+   //url: "http://localhost:3000",
   url: "http://api.my-mesto.nomoreparties.co",
   headers: {
     authorization: `Bearer ${localStorage.getItem('token')}`,
