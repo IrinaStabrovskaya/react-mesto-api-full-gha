@@ -14,7 +14,7 @@ mongoose.connect('mongodb://0.0.0.0:27017/mestodb');
 
 app.use(express.json());
 
-app.use(cors({ origin: ['http://localhost:3001'] }));
+app.use(cors());
 
 app.use(requestLogger);
 
