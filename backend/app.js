@@ -1,26 +1,25 @@
 require('dotenv').config();
 
-// eslint-disable-next-line import/first
-import express, { json } from 'express';
-// eslint-disable-next-line import/first
-import { connect } from 'mongoose';
-// eslint-disable-next-line import/first
-import { errors } from 'celebrate';
-// eslint-disable-next-line import/first
-import cors from 'cors';
-// eslint-disable-next-line import/first
-import errorHandler from './middlewares/error-handler';
-// eslint-disable-next-line import/first
-import { requestLogger, errorLogger } from './middlewares/logger';
-// eslint-disable-next-line import/first
-import routes from './routes/index';
+const express = require('express');
+
+const mongoose = require('mongoose');
+
+const { errors } = require('celebrate');
+
+const { cors } = require('cors');
+
+const errorHandler = require('./middlewares/error-handler');
+
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+
+const routes = require('./routes/index');
 
 const app = express();
 
 const { PORT = 3000 } = process.env;
-connect('mongodb://0.0.0.0:27017/mestodb');
+mongoose.connect('mongodb://0.0.0.0:27017/mestodb');
 
-app.use(json());
+app.use(express.json());
 
 app.use(cors());
 
