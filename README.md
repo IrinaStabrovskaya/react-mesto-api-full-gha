@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.47.145
+IP-адрес 158.160.47.145.
 
 Frontend https://my-mesto.nomoredomains.xyz
 
