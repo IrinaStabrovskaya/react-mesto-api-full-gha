@@ -13,7 +13,7 @@ const {
 
 const SALT_ROUNDS = 10;
 
-const JWT_SECRET = 'super-puper-secret-key';
+const { JWT_SECRET } = process.env;
 
 // запрос всех пользователей
 const getUsers = (req, res, next) => {
@@ -140,7 +140,7 @@ const login = (req, res, next) => {
           throw new Unauthorized('Неправильные почта или пароль');
         }
         return res.send({
-          token: jwt.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' }),
+          token: jwt.sign({ _id: user._id }, process.env.NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' }),
         });
       }))
     .catch((err) => {
