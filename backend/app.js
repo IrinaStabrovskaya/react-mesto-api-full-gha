@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const { errors } = require('celebrate');
 
-const { cors } = require('cors');
+const cors = require('cors');
 
 const errorHandler = require('./middlewares/error-handler');
 

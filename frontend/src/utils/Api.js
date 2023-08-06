@@ -126,5 +126,7 @@ export class Api {
   }
 }
 export const api = new Api({
-  url: "https://api.my-mesto.nomoreparties.co",
+   url: "https://api.my-mesto.nomoreparties.co",
+  //url: "http://localhost:3000",
+
 });
